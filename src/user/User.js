@@ -44,37 +44,37 @@ export const User = () => {
     /users/:userId
   */
   return (
-    <Switch>
-      <section className="container">
-        <PostsNav />
-        <div className="border p-4 h-100 d-flex flex-column">
-          <h2 className="mb-3">{user.name}</h2>
-          <ul className="nav nav-tabs">
-            <li className="nav-item">
-              <Link to={`${url}`} className="nav-link">Profile</Link>
-            </li>
-            <li className="nav-item">
-              <Link to={`${url}/posts`} className="nav-link">Posts</Link>
-            </li>
-          </ul>
-          
-          {user.id ? (
-            <div className="p-4 border border-top-0">
+    <section className="container">
+      <PostsNav />
+      <div className="border p-4 h-100 d-flex flex-column">
+        <h2 className="mb-3">{user.name}</h2>
+        <ul className="nav nav-tabs">
+          <li className="nav-item">
+            <Link to={`${url}`} className="nav-link">Profile</Link>
+          </li>
+          <li className="nav-item">
+            <Link to={`${url}/posts`} className="nav-link">Posts</Link>
+          </li>
+        </ul>
+        
+        {user.id ? (
+          <div className="p-4 border border-top-0">
+            <Switch>
               <Route exact path={`${path}/posts`}>
                 <PostList posts={user.posts} />
               </Route>
               <Route path={`${path}`}>
                 <UserProfile user={user} />
               </Route>
-            </div>
-          ) : (
-            <div className="p-4 border border-top-0">
-              <p>Loading...</p>
-            </div>
-          )}
-        </div>
-      </section>
-    </Switch>
+            </Switch>
+          </div>
+        ) : (
+          <div className="p-4 border border-top-0">
+            <p>Loading...</p>
+          </div>
+        )}
+      </div>
+    </section>
   );
 };
 
