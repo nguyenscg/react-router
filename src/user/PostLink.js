@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 export const PostLink = ({ post }) => {
   return (
     <li className="list-group-item text-truncate">
-      <Link to={`/test/post-link/urls/${post.id}`}>{post.title}</Link>
+      <Link to={`posts/${post.id}`}>{post.title}</Link>
     </li>
   );
 };
