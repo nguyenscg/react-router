@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { BrowserRouter as Router, Route} from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch, Link} from "react-router-dom";
 
 import Header from "./common/Header";
 import CardList from "./home/CardList";
@@ -20,15 +20,17 @@ function App() {
   return (
     <Fragment>
       <Header />
-      <Route path="/users/:userId">
-        <User />
-      </Route>
-      <Route path="/">
-        <CardList />
-      </Route>
-      <Route>
-        <NotFound />
-      </Route>
+      <Switch>
+        <Route path="/users/:userId">
+          <User />
+        </Route>
+        <Route path="/">
+          <CardList />
+        </Route>
+        <Route>
+          <NotFound />
+        </Route>
+      </Switch>
     </Fragment>
   );
 }
