@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route} from "react-router-dom";
 import Header from "./common/Header";
 import CardList from "./home/CardList";
 import User from "./user/User";
+import NotFound from "./common/NotFound";
 
 function App() {
   /*
@@ -24,6 +25,9 @@ function App() {
       </Route>
       <Route path="/">
         <CardList />
+      </Route>
+      <Route>
+        <NotFound />
       </Route>
     </Fragment>
   );
