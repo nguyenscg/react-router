@@ -21,10 +21,10 @@ function App() {
     <Fragment>
       <Header />
       <Switch>
-        <Route path="/users/:userId">
+        <Route exact path="/users/:userId">
           <User />
         </Route>
-        <Route path="/">
+        <Route exact path="/">
           <CardList />
         </Route>
         <Route>
