@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 /*
   TODO: Change the below to be a link that goes to the specific post route using the post id.
@@ -7,7 +8,7 @@ import React from "react";
 export const PostLink = ({ post }) => {
   return (
     <li className="list-group-item text-truncate">
-      <a>{post.title}</a>
+      <Link to={`/test/post-link/urls/${post.id}`}>{post.title}</Link>
     </li>
   );
 };
