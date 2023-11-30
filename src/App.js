@@ -19,7 +19,7 @@ function App() {
   return (
     <Fragment>
       <Header />
-      <Route path="/">
+      <Route path="/users/:userId">
         <User />
       </Route>
       <Route path="/">
